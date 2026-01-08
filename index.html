@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาลัยเทคนิคยะลา - Yala Technical College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ตั้งค่าพื้นฐาน (Reset & Basics) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- ส่วนหัว (Header & Navigation) --- */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #003399; /* สีน้ำเงินเข้ม */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #e65100; /* สีส้ม */
+        }
+
+        /* --- ส่วนแบนเนอร์ (Hero Section) --- */
+        .hero {
+            background: linear-gradient(rgba(0,51,153,0.8), rgba(0,51,153,0.6)), url('https://placehold.co/1920x800?text=Yala+Technical+College+Image'); /* ใส่รูปวิทยาลัยจริงที่นี่ */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px; /* เว้นที่ให้ Header */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #e65100;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #bf360c;
+        }
+
+        /* --- ข้อมูลทั่วไป (About Section) --- */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #003399;
+            font-size: 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- หลักสูตร (Courses/Departments) --- */
+        .courses {
+            background-color: #fff;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 5px solid #003399;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* --- ข่าวประชาสัมพันธ์ (News) --- */
+        .news-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* --- ส่วนท้าย (Footer) --- */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            color: #e65100;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive มือถือ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* ซ่อนเมนูในมือถือแบบง่าย */
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://placehold.co/40x40?text=YT" alt="Logo" style="border-radius: 50%;">
+                    วิทยาลัยเทคนิคยะลา
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">หน้าแรก</a></li>
+                    <li><a href="#about">เกี่ยวกับเรา</a></li>
+                    <li><a href="#courses">หลักสูตร</a></li>
+                    <li><a href="#news">ข่าวสาร</a></li>
+                    <li><a href="#contact">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>มุ่งสร้างคนดี มีฝีมือ สู่สังคม</h1>
+            <p>ยินดีต้อนรับเข้าสู่เว็บไซต์วิทยาลัยเทคนิคยะลา สถาบันอาชีวศึกษาชั้นนำในจังหวัดชายแดนภาคใต้ มุ่งเน้นผลิตกำลังคนด้านวิชาชีพที่มีคุณภาพ</p>
+            <a href="#courses" class="btn">ดูหลักสูตรที่เปิดสอน</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">เกี่ยวกับวิทยาลัย</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400?text=College+Activity" alt="กิจกรรมวิทยาลัย">
+                </div>
+                <div class="about-text">
+                    <h3>วิสัยทัศน์ (Vision)</h3>
+                    <p>มุ่งจัดการอาชีวศึกษา ให้ได้มาตรฐานสากล บนพื้นฐานเศรษฐกิจพอเพียง</p>
+                    <br>
+                    <h3>พันธกิจ (Mission)</h3>
+                    <ul>
+                        <li>1. ผลิตและพัฒนากำลังคนด้านวิชาชีพให้มีคุณภาพ</li>
+                        <li>2. ส่งเสริมการวิจัยและนวัตกรรมสิ่งประดิษฐ์</li>
+                        <li>3. บริการวิชาการและวิชาชีพสู่ชุมชน</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section courses">
+        <div class="container">
+            <h2 class="section-title">หลักสูตรที่เปิดสอน</h2>
+            <p style="text-align: center; margin-bottom: 30px;">เปิดสอนในระดับ ปวช. และ ปวส.</p>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>ช่างอุตสาหกรรม</h3>
+                    <p>ช่างยนต์, ช่างกลโรงงาน, ช่างเชื่อม, ช่างไฟฟ้า, ช่างอิเล็กทรอนิกส์</p>
+                </div>
+                <div class="course-card">
+                    <h3>เทคโนโลยีสารสนเทศ</h3>
+                    <p>เทคโนโลยีสารสนเทศ (IT), คอมพิวเตอร์ธุรกิจ, ซอฟต์แวร์</p>
+                </div>
+                <div class="course-card">
+                    <h3>สถาปัตยกรรม & โยธา</h3>
+                    <p>สถาปัตยกรรม, ช่างก่อสร้าง, ช่างสำรวจ</p>
+                </div>
+                <div class="course-card">
+                    <h3>พาณิชยกรรม</h3>
+                    <p>การบัญชี, การตลาด, การจัดการโลจิสติกส์</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>วิทยาลัยเทคนิคยะลา</h4>
+                    <p>เลขที่ 3 ถนนพิพิธภักดี ตำบลสะเตง อำเภอเมือง จังหวัดยะลา 95000</p>
+                </div>
+                <div class="footer-column">
+                    <h4>ติดต่อเรา</h4>
+                    <p>โทรศัพท์: 073-212-XXX</p>
+                    <p>Email: admin@yala.ac.th</p>
+                </div>
+                <div class="footer-column">
+                    <h4>ลิงก์ด่วน</h4>
+                    <ul>
+                        <li><a href="#">ระบบรับสมัครนักศึกษา</a></li>
+                        <li><a href="#">ระบบตรวจสอบผลการเรียน</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 วิทยาลัยเทคนิคยะลา. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
